@@ -48,7 +48,17 @@ def starts_with_consonant? s
   "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".include? first_letter
 end
 
-def binary_multiple_of_4? s   #why isn't this defined?
+def binary_multiple_of_4? s   
+  s.each_char do |x|
+    if x != "1" && x != "0"
+      return false
+    end
+  end
+  if s.length >= 2 && s.end_with?("00")  #"Incorrect results for input: \"#{string}\""
+                                        #Incorrect results for input: "1010101010100"
+    return true
+  end
+    return false
 end
 
 
