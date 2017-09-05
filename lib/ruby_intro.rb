@@ -54,13 +54,15 @@ def binary_multiple_of_4? s
       return false
     end
   end
-  if s.length >= 2 && s.end_with?("00")  #"Incorrect results for input: \"#{string}\""
+  return true if s.length == 1 && s == '0'
+  if s.length > 2 && s.end_with?("00")  #"Incorrect results for input: \"#{string}\""
                                         #Incorrect results for input: "1010101010100"
     return true
-  end
-    return false
+  end                      
+  return false
 end
 
+                                            #return s =~  /^[10]*00$/i
 
 # Part 3
 
